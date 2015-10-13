@@ -47,12 +47,14 @@ void pwm_set_resolution(int res)
 void pwm_set_clockA_freq(uint32_t  freq)
 {
 	pwm_clockA_freq = freq * pwm_max_duty_Ncount;
+	pwm_update_clocks();
 }
 
 
 void pwm_set_clockB_freq(uint32_t  freq)
 {
 	pwm_clockB_freq = freq * pwm_max_duty_Ncount;
+	pwm_update_clocks();
 }
 
 static inline uint32_t mapResolution(uint32_t value, uint32_t from, uint32_t to) 
